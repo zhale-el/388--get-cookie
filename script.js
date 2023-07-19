@@ -10,11 +10,13 @@ setCookieBtn.addEventListener("click", () => {
 });
 
 getCookieBtn.addEventListener("click", () => {
+  let mainCookieName = prompt("Enter the name");
+
   let cookiesArray = document.cookie.split(";");
   console.log(cookiesArray);
   let mainCookie = null;
   cookiesArray.some((cookie) => {
-    if (cookie.includes("username")) {
+    if (cookie.includes(mainCookieName)) {
       mainCookie = cookie.substring(cookie.indexOf("=") + 1);
       return true;
     }
